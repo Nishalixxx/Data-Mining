@@ -1,0 +1,55 @@
+{
+    "dimensions": [
+	{
+		"name":"Region",
+		"label":"Region",
+		"attributes": ["Region"]
+	},
+	{
+		"name":"Age",
+		"label":"Age",
+		"attributes": ["Age"]
+	},
+	{
+		"name":"Online_Shopper",
+		"label":"Online Shopper",
+		"attributes": ["Online_Shopper"]
+	}
+	],
+    "cubes": [
+        {
+		"name": "Income_Data",
+		"dimensions": ["Region", "Age", "Online_Shopper"],
+		"measures": [{"name":"Income", "label":"Income"}],
+		"aggregates": [
+                    {
+ 			"name": "Income_sum",
+                        "function": "sum",
+                        "measure": "Income"
+                    },
+                    {
+                        "name": "Income_avg",
+                        "function": "avg",
+			"measure": "Income"
+                    },
+		    { 
+			"name": "Income_min",
+			"function": "min",
+			"measure": "Income"
+		    },
+		    {
+			"name": "Income_max",
+			"function": "max",
+			"measure": "Income"
+		    }
+                ],
+            "mappings": {
+                          "Region": "Region",
+                          "Age": "Age",
+                          "Online_Shopper": "Online Shopper"
+            }
+            
+        }
+    ]
+}
+
